@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<bean id="UserDao" class="com.cid.dao.UserDaoImpl">
+		<property name = "dataSource" ref ="dataSource" />  		
+	</bean>		
+	
+	<bean id="CidServiceBean" name="CidServiceName" class="com.cid.service.CidServiceImpl">
+		<property name="UserDao" ref="UserDao" />		
+	</bean>
+	
+	<bean id="dataSource" class ="org.apache.commons.dbcp2.BasicDataSource">
+	   <property name ="driverClassName" value ="com.mysql.cj.jdbc.Driver"/>
+	   <property name ="url" value ="jdbc:mysql://localhost:3306/cid"/>
+	   <property name ="username" value ="root"/>
+	   <property name ="password" value ="tere"/>
+	   <property name="minIdle" value="5"/>
+	   <property name="maxIdle" value="10"/>
+	   <property name="maxOpenPreparedStatements" value="100"/>
+	</bean>		
+	
+</beans>
