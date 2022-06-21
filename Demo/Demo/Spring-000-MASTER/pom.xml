@@ -26,7 +26,7 @@
         <org.hamcrest.version>1.3</org.hamcrest.version>
         <mockito.version>1.9.5</mockito.version>
         <junit.version>4.12</junit.version>
-        <mysql.driver>8.0.17</mysql.driver> 
+        <mysql.driver>8.0.28</mysql.driver> 
 	       
 	        	  
     </properties>
